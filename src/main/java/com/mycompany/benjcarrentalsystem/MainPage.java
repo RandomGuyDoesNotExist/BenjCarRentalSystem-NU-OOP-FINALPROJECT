@@ -15,6 +15,7 @@ public class MainPage extends javax.swing.JFrame {
      */
     public MainPage() {
         initComponents();
+        setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
     }
 
     /**
@@ -34,9 +35,14 @@ public class MainPage extends javax.swing.JFrame {
         upShadow = new javax.swing.JLabel();
         SidePanel = new javax.swing.JPanel();
         companyName = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        rentACarButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        addCarButton1 = new javax.swing.JButton();
+        deleteCarButton = new javax.swing.JButton();
+        rentalStatusButton1 = new javax.swing.JButton();
         doodle = new javax.swing.JLabel();
+        upShadow3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
@@ -47,7 +53,6 @@ public class MainPage extends javax.swing.JFrame {
         UpperPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         companyName1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
-        companyName1.setForeground(new java.awt.Color(0, 0, 0));
         companyName1.setText("SUNSET DRIVE");
         UpperPanel.add(companyName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, 20));
 
@@ -73,16 +78,68 @@ public class MainPage extends javax.swing.JFrame {
         companyName.setText("SUNSET DRIVE");
         SidePanel.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 140, 40));
 
-        jButton1.setText("jButton1");
-        SidePanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, 223, 230, 50));
+        rentACarButton.setBackground(new java.awt.Color(255, 0, 0));
+        rentACarButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        rentACarButton.setForeground(new java.awt.Color(255, 255, 255));
+        rentACarButton.setText("RENT A CAR");
+        rentACarButton.setBorder(null);
+        rentACarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rentACarButtonActionPerformed(evt);
+            }
+        });
+        SidePanel.add(rentACarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 340, 240, 50));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carCompanyLogo (1).png"))); // NOI18N
         SidePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 190));
 
+        addCarButton1.setBackground(new java.awt.Color(255, 0, 0));
+        addCarButton1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        addCarButton1.setForeground(new java.awt.Color(255, 255, 255));
+        addCarButton1.setText("ADD CAR");
+        addCarButton1.setBorder(null);
+        addCarButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCarButton1ActionPerformed(evt);
+            }
+        });
+        SidePanel.add(addCarButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 220, 240, 50));
+
+        deleteCarButton.setBackground(new java.awt.Color(255, 0, 0));
+        deleteCarButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        deleteCarButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteCarButton.setText("DELETE CAR");
+        deleteCarButton.setBorder(null);
+        deleteCarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCarButtonActionPerformed(evt);
+            }
+        });
+        SidePanel.add(deleteCarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 240, 50));
+
+        rentalStatusButton1.setBackground(new java.awt.Color(255, 0, 0));
+        rentalStatusButton1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        rentalStatusButton1.setForeground(new java.awt.Color(255, 255, 255));
+        rentalStatusButton1.setText("RENTAL STATUS");
+        rentalStatusButton1.setBorder(null);
+        rentalStatusButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rentalStatusButton1ActionPerformed(evt);
+            }
+        });
+        SidePanel.add(rentalStatusButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 400, 240, 50));
+
         doodle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background doodle.png"))); // NOI18N
         SidePanel.add(doodle, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 350, 630));
 
+        upShadow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dropShadow3.png"))); // NOI18N
+        SidePanel.add(upShadow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 650));
+
         getContentPane().add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 620));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0,200));
+        jPanel1.setLayout(new java.awt.CardLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 710, 570));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedbg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1040, 660));
@@ -102,9 +159,25 @@ public class MainPage extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 650));
 
-        setSize(new java.awt.Dimension(983, 656));
+        setSize(new java.awt.Dimension(983, 661));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rentACarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentACarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rentACarButtonActionPerformed
+
+    private void addCarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCarButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addCarButton1ActionPerformed
+
+    private void deleteCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteCarButtonActionPerformed
+
+    private void rentalStatusButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentalStatusButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rentalStatusButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,15 +220,20 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel CarIcon;
     private javax.swing.JPanel SidePanel;
     private javax.swing.JPanel UpperPanel;
+    private javax.swing.JButton addCarButton1;
     private javax.swing.JLabel companyName;
     private javax.swing.JLabel companyName1;
+    private javax.swing.JButton deleteCarButton;
     private javax.swing.JLabel doodle;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton rentACarButton;
+    private javax.swing.JButton rentalStatusButton1;
     private javax.swing.JLabel upShadow;
     private javax.swing.JLabel upShadow1;
     private javax.swing.JLabel upShadow2;
+    private javax.swing.JLabel upShadow3;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,12 +8,12 @@ package com.mycompany.benjcarrentalsystem;
  *
  * @author ADMIN
  */
-public class Login extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public SignUp() {
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
     }
@@ -39,18 +39,22 @@ public class Login extends javax.swing.JFrame {
         upShadow2 = new javax.swing.JLabel();
         upShadow1 = new javax.swing.JLabel();
         upShadow = new javax.swing.JLabel();
-        SidePanel = new javax.swing.JPanel();
+        companyLogo = new javax.swing.JLabel();
         companyName = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        SidePanel = new javax.swing.JPanel();
+        signUpText = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        contactNumberField = new javax.swing.JTextField();
+        usernameText = new javax.swing.JLabel();
+        passwordText = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
+        signUpButton = new javax.swing.JButton();
+        nameText1 = new javax.swing.JLabel();
+        userNameField = new javax.swing.JTextField();
+        addressText = new javax.swing.JLabel();
+        nameField1 = new javax.swing.JTextField();
+        contactNumberText = new javax.swing.JLabel();
+        addressField = new javax.swing.JTextField();
         doodle = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -128,118 +132,148 @@ public class Login extends javax.swing.JFrame {
         upShadow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dropShadow3.png"))); // NOI18N
         getContentPane().add(upShadow, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 350, 190));
 
-        SidePanel.setBackground(new java.awt.Color(239, 239, 239,175));
-        SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        companyLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carCompanyLogo (1).png"))); // NOI18N
+        getContentPane().add(companyLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 190, 230));
 
         companyName.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
         companyName.setForeground(new java.awt.Color(255, 0, 0));
         companyName.setText("SUNSET DRIVE");
-        SidePanel.add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 196, 140, 40));
+        getContentPane().add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 140, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carCompanyLogo (1).png"))); // NOI18N
-        SidePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 190, 230));
+        SidePanel.setBackground(new java.awt.Color(239, 239, 239,175));
+        SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        signUpText.setBackground(new java.awt.Color(49, 46, 57));
+        signUpText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        signUpText.setForeground(new java.awt.Color(49, 46, 57));
+        signUpText.setText("Sign-Up");
+        SidePanel.add(signUpText, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(49, 46, 57,190));
 
-        jTextField1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        contactNumberField.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        contactNumberField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        contactNumberField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                contactNumberFieldActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 51, 0));
-        jLabel2.setText("Enter Username");
+        usernameText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        usernameText.setForeground(new java.awt.Color(204, 51, 0));
+        usernameText.setText("Enter Username");
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 51, 0));
-        jLabel5.setText("Enter Password");
+        passwordText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        passwordText.setForeground(new java.awt.Color(204, 51, 0));
+        passwordText.setText("Enter Password");
 
-        jPasswordField1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        passwordField.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        passwordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                passwordFieldActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log In");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setBackground(new java.awt.Color(255, 0, 0));
+        signUpButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        signUpButton.setForeground(new java.awt.Color(255, 255, 255));
+        signUpButton.setText("Create Account");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 153));
-        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Sign-Up");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        nameText1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        nameText1.setForeground(new java.awt.Color(204, 51, 0));
+        nameText1.setText("Enter name");
+
+        userNameField.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        userNameField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        userNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                userNameFieldActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel8.setText("or");
+        addressText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        addressText.setForeground(new java.awt.Color(204, 51, 0));
+        addressText.setText("Enter address");
+
+        nameField1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        nameField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        nameField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameField1ActionPerformed(evt);
+            }
+        });
+
+        contactNumberText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 12)); // NOI18N
+        contactNumberText.setForeground(new java.awt.Color(204, 51, 0));
+        contactNumberText.setText("Enter contact number");
+
+        addressField.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        addressField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        addressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                            .addComponent(jTextField1)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addressField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                        .addComponent(contactNumberField)
+                        .addComponent(userNameField)
+                        .addComponent(nameField1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(contactNumberText))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
+                .addContainerGap()
+                .addComponent(nameText1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
+                .addComponent(nameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addressText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
+                .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(contactNumberText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contactNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(usernameText)
+                .addGap(1, 1, 1)
+                .addComponent(userNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
-        SidePanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 270, 290));
-
-        jLabel6.setBackground(new java.awt.Color(49, 46, 57));
-        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(49, 46, 57));
-        jLabel6.setText("Log In");
-        SidePanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
+        SidePanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 270, 390));
 
         doodle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/background doodle.png"))); // NOI18N
         SidePanel.add(doodle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 340, 630));
@@ -268,21 +302,29 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void contactNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactNumberFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_contactNumberFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_signUpButtonActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void userNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_userNameFieldActionPerformed
+
+    private void nameField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameField1ActionPerformed
+
+    private void addressFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,20 +343,23 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new SignUp().setVisible(true);
                 
             }
         });
@@ -330,23 +375,27 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel aboutUs4;
     private javax.swing.JLabel aboutUs5;
     private javax.swing.JLabel aboutUs6;
+    private javax.swing.JTextField addressField;
+    private javax.swing.JLabel addressText;
+    private javax.swing.JLabel companyLogo;
     private javax.swing.JLabel companyName;
     private javax.swing.JLabel companyName1;
+    private javax.swing.JTextField contactNumberField;
+    private javax.swing.JLabel contactNumberText;
     private javax.swing.JLabel doodle;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField nameField1;
+    private javax.swing.JLabel nameText1;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JLabel passwordText;
+    private javax.swing.JButton signUpButton;
+    private javax.swing.JLabel signUpText;
     private javax.swing.JLabel upShadow;
     private javax.swing.JLabel upShadow1;
     private javax.swing.JLabel upShadow2;
+    private javax.swing.JTextField userNameField;
+    private javax.swing.JLabel usernameText;
     // End of variables declaration//GEN-END:variables
 }
