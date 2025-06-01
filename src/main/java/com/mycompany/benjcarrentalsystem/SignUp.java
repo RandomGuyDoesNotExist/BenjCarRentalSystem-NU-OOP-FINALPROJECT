@@ -179,6 +179,7 @@ public class SignUp extends javax.swing.JFrame {
         signUpButton.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         signUpButton.setForeground(new java.awt.Color(255, 255, 255));
         signUpButton.setText("Create Account");
+        signUpButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpButtonActionPerformed(evt);
@@ -235,13 +236,12 @@ public class SignUp extends javax.swing.JFrame {
                     .addComponent(addressField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                     .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameText1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                        .addComponent(contactNumberField)
-                        .addComponent(userNameField)
-                        .addComponent(nameField1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(usernameText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordText, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(contactNumberField)
+                    .addComponent(userNameField)
+                    .addComponent(nameField1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(contactNumberText))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
@@ -298,7 +298,7 @@ public class SignUp extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 650));
 
-        setSize(new java.awt.Dimension(983, 656));
+        setSize(new java.awt.Dimension(983, 659));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -308,6 +308,9 @@ public class SignUp extends javax.swing.JFrame {
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed

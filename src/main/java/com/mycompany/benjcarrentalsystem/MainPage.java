@@ -4,6 +4,8 @@
  */
 package com.mycompany.benjcarrentalsystem;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author ADMIN
@@ -13,11 +15,25 @@ public class MainPage extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    CardLayout cardLayout;
     public MainPage() {
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
+        initCards();
+        
+          cardLayout=(CardLayout) jPanel1.getLayout();
+          cardLayout.show(jPanel1, "addCarPage1");
+          
+          
     }
-
+  
+    public void initCards(){
+        jPanel1.add(addCarPage1, "addCarPage1");
+        jPanel1.add(removeCarPage1, "removeCarPage1");
+        jPanel1.add(rentACarPage1, "rentACarPage1");
+        jPanel1.add(rentalStatusPage1, "rentalStatusPage1");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +59,10 @@ public class MainPage extends javax.swing.JFrame {
         doodle = new javax.swing.JLabel();
         upShadow3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        addCarPage1 = new com.mycompany.benjcarrentalsystem.AddCarPage();
+        removeCarPage1 = new com.mycompany.benjcarrentalsystem.RemoveCarPage();
+        rentACarPage1 = new com.mycompany.benjcarrentalsystem.RentACarPage();
+        rentalStatusPage1 = new com.mycompany.benjcarrentalsystem.RentalStatusPage();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
@@ -83,6 +103,7 @@ public class MainPage extends javax.swing.JFrame {
         rentACarButton.setForeground(new java.awt.Color(255, 255, 255));
         rentACarButton.setText("RENT A CAR");
         rentACarButton.setBorder(null);
+        rentACarButton.setBorderPainted(false);
         rentACarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rentACarButtonActionPerformed(evt);
@@ -98,6 +119,7 @@ public class MainPage extends javax.swing.JFrame {
         addCarButton1.setForeground(new java.awt.Color(255, 255, 255));
         addCarButton1.setText("ADD CAR");
         addCarButton1.setBorder(null);
+        addCarButton1.setBorderPainted(false);
         addCarButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addCarButton1ActionPerformed(evt);
@@ -108,8 +130,9 @@ public class MainPage extends javax.swing.JFrame {
         deleteCarButton.setBackground(new java.awt.Color(255, 0, 0));
         deleteCarButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
         deleteCarButton.setForeground(new java.awt.Color(255, 255, 255));
-        deleteCarButton.setText("DELETE CAR");
+        deleteCarButton.setText("REMOVE A CAR");
         deleteCarButton.setBorder(null);
+        deleteCarButton.setBorderPainted(false);
         deleteCarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteCarButtonActionPerformed(evt);
@@ -122,6 +145,7 @@ public class MainPage extends javax.swing.JFrame {
         rentalStatusButton1.setForeground(new java.awt.Color(255, 255, 255));
         rentalStatusButton1.setText("RENTAL STATUS");
         rentalStatusButton1.setBorder(null);
+        rentalStatusButton1.setBorderPainted(false);
         rentalStatusButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rentalStatusButton1ActionPerformed(evt);
@@ -139,6 +163,19 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0,200));
         jPanel1.setLayout(new java.awt.CardLayout());
+
+        addCarPage1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(addCarPage1, "card2");
+
+        removeCarPage1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(removeCarPage1, "card3");
+
+        rentACarPage1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(rentACarPage1, "card4");
+
+        rentalStatusPage1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(rentalStatusPage1, "card5");
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 710, 570));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedbg.jpg"))); // NOI18N
@@ -165,18 +202,25 @@ public class MainPage extends javax.swing.JFrame {
 
     private void rentACarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentACarButtonActionPerformed
         // TODO add your handling code here:
+     //rentACarPage1.show(rentACarPage1);
+     cardLayout.show(jPanel1,"rentACarPage1");
+     
     }//GEN-LAST:event_rentACarButtonActionPerformed
 
     private void addCarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCarButton1ActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(jPanel1,"addCarPage1");
     }//GEN-LAST:event_addCarButton1ActionPerformed
 
     private void deleteCarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCarButtonActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(jPanel1,"removeCarPage1");
     }//GEN-LAST:event_deleteCarButtonActionPerformed
+
 
     private void rentalStatusButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentalStatusButton1ActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(jPanel1,"rentalStatusPage1");
     }//GEN-LAST:event_rentalStatusButton1ActionPerformed
 
     /**
@@ -221,6 +265,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel SidePanel;
     private javax.swing.JPanel UpperPanel;
     private javax.swing.JButton addCarButton1;
+    private com.mycompany.benjcarrentalsystem.AddCarPage addCarPage1;
     private javax.swing.JLabel companyName;
     private javax.swing.JLabel companyName1;
     private javax.swing.JButton deleteCarButton;
@@ -229,8 +274,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private com.mycompany.benjcarrentalsystem.RemoveCarPage removeCarPage1;
     private javax.swing.JButton rentACarButton;
+    private com.mycompany.benjcarrentalsystem.RentACarPage rentACarPage1;
     private javax.swing.JButton rentalStatusButton1;
+    private com.mycompany.benjcarrentalsystem.RentalStatusPage rentalStatusPage1;
     private javax.swing.JLabel upShadow;
     private javax.swing.JLabel upShadow1;
     private javax.swing.JLabel upShadow2;
