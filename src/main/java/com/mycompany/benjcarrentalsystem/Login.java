@@ -4,6 +4,11 @@
  */
 package com.mycompany.benjcarrentalsystem;
 
+import database.DBConn;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 /**
  *
  * @author ADMIN
@@ -14,14 +19,32 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     String username,password;
-    
+    Connection conn;
     public Login() {
+        conn = DBConn.connect();
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
         username = jTextField1.getText();
-        password = jPasswordField1.getText();
+        password = String.valueOf(jPasswordField1.getPassword());
     }
-
+    
+    public void login(){
+        String sql = "SELECT * FROM LogInData WHERE Username = ? AND Password = ?";
+        
+        try(PreparedStatement pst = conn.prepareStatement(sql)){
+            pst.setString(1,jTextField1.getText());
+            pst.setString(2,String.valueOf(jPasswordField1.getPassword()));
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                new MainPage().setVisible(true);
+                this.dispose();
+            }else{
+                
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -173,6 +196,7 @@ public class Login extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Log In");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -183,6 +207,7 @@ public class Login extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Sign-Up");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -268,7 +293,7 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 650));
 
-        setSize(new java.awt.Dimension(983, 656));
+        setSize(new java.awt.Dimension(983, 659));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -278,10 +303,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        MainPage mp = new MainPage();
-        mp.setVisible(true);
-       this.dispose();
+        login();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed

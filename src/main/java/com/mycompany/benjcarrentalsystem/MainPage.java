@@ -179,7 +179,7 @@ public class MainPage extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 710, 570));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedbg.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1040, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1040, 670));
 
         jPanel2.setBackground(new java.awt.Color(247, 249, 226));
 
