@@ -193,6 +193,7 @@ public class AddCarPage extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        System.out.printf("Button is working");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void carIDFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carIDFieldActionPerformed

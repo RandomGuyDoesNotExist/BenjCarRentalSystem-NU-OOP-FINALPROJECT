@@ -5,15 +5,18 @@
 package com.mycompany.benjcarrentalsystem;
 
 import database.DBConn;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ADMIN
  */
-public class Login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame{
 
     /**
      * Creates new form Login
@@ -36,13 +39,16 @@ public class Login extends javax.swing.JFrame {
             pst.setString(2,String.valueOf(jPasswordField1.getPassword()));
             ResultSet rs = pst.executeQuery();
             if(rs.next()){
+                JOptionPane.showMessageDialog(null,"Log In Success.");
                 new MainPage().setVisible(true);
                 this.dispose();
-            }else{
                 
+            }else{
+                JOptionPane.showMessageDialog(null,"Invalid username and password.");
             }
         }catch(Exception e){
             e.printStackTrace();
+            
         }
     }
     /**
@@ -308,6 +314,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -382,4 +389,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel upShadow1;
     private javax.swing.JLabel upShadow2;
     // End of variables declaration//GEN-END:variables
+
+
 }
