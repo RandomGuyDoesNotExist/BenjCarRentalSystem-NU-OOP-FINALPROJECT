@@ -7,11 +7,13 @@ package com.mycompany.benjcarrentalsystem;
 import database.DBConn;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import javax.swing.JOptionPane;
 
+import javax.swing.JOptionPane;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 /**
  *
  * @author ADMIN
@@ -22,35 +24,41 @@ public class Login extends javax.swing.JFrame{
      * Creates new form Login
      */
     String username,password;
-    Connection conn;
+    String test = "benj";
     public Login() {
-        conn = DBConn.connect();
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
         username = jTextField1.getText();
         password = String.valueOf(jPasswordField1.getPassword());
-    }
-    
-    public void login(){
-        String sql = "SELECT * FROM LogInData WHERE Username = ? AND Password = ?";
         
-        try(PreparedStatement pst = conn.prepareStatement(sql)){
-            pst.setString(1,jTextField1.getText());
-            pst.setString(2,String.valueOf(jPasswordField1.getPassword()));
-            ResultSet rs = pst.executeQuery();
-            if(rs.next()){
-                JOptionPane.showMessageDialog(null,"Log In Success.");
-                new MainPage().setVisible(true);
-                this.dispose();
-                
-            }else{
-                JOptionPane.showMessageDialog(null,"Invalid username and password.");
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-            
-        }
+        
+      
+        
     }
+    public void login(){ //MONGODB WAY
+    try(MongoClient client = MongoClients.create("mongodb://localhost:27017")){
+        
+    MongoDatabase database = client.getDatabase("CRS");
+    MongoCollection<Document> logInCollection = database.getCollection("LogInCollection");
+          
+    Document query = new Document("username", username)
+            .append("password", password);
+    
+    Document user = logInCollection.find(query).first();
+    
+    if(user!=null){
+        JOptionPane.showMessageDialog(null,"Log In Success.");
+        new MainPage().setVisible(true);
+        this.dispose();
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"Invalid username and password.");
+    }
+    } catch(Exception ex){
+    ex.printStackTrace(); 
+    }
+}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -299,7 +307,7 @@ public class Login extends javax.swing.JFrame{
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 650));
 
-        setSize(new java.awt.Dimension(983, 659));
+        setSize(new java.awt.Dimension(983, 662));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
