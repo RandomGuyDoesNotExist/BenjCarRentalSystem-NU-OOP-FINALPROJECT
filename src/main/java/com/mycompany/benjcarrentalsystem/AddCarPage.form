@@ -82,7 +82,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="carType">
+    <Component class="javax.swing.JComboBox" name="carTypeOption">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -91,12 +91,13 @@
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="6">
             <StringItem index="0" value="2-Seater"/>
             <StringItem index="1" value="4-Seater"/>
             <StringItem index="2" value="5-Seater"/>
-            <StringItem index="3" value="7-Seater"/>
-            <StringItem index="4" value="8+ Seater"/>
+            <StringItem index="3" value="6-Seater"/>
+            <StringItem index="4" value="7-Seater"/>
+            <StringItem index="5" value="8+ Seater"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -106,7 +107,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carTypeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carTypeOptionActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -117,7 +118,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="carBrand">
+    <Component class="javax.swing.JComboBox" name="carBrandOption">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -126,7 +127,7 @@
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="10">
+          <StringArray count="27">
             <StringItem index="0" value="Toyota"/>
             <StringItem index="1" value="Honda"/>
             <StringItem index="2" value="Nissan"/>
@@ -137,6 +138,23 @@
             <StringItem index="7" value="Mazda"/>
             <StringItem index="8" value="Volkswagen"/>
             <StringItem index="9" value="Mitsubishi"/>
+            <StringItem index="10" value="Tesla"/>
+            <StringItem index="11" value="Mercedes-Benz"/>
+            <StringItem index="12" value="BMW"/>
+            <StringItem index="13" value="Audi"/>
+            <StringItem index="14" value="Lexus"/>
+            <StringItem index="15" value="Cadillac"/>
+            <StringItem index="16" value="Genesis"/>
+            <StringItem index="17" value="Volvo"/>
+            <StringItem index="18" value="Acura"/>
+            <StringItem index="19" value="Infiniti"/>
+            <StringItem index="20" value="LincolnLamborghini"/>
+            <StringItem index="21" value="Ferrari"/>
+            <StringItem index="22" value="Bentley"/>
+            <StringItem index="23" value="Rolls-Royce"/>
+            <StringItem index="24" value="Aston Martin"/>
+            <StringItem index="25" value="McLaren"/>
+            <StringItem index="26" value="Bugatti"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -146,7 +164,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carBrandActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carBrandOptionActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -157,17 +175,17 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="carYear">
+    <Component class="javax.swing.JTextField" name="carYearField">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
+          <Color blue="66" green="66" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carYearActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carYearFieldActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -223,17 +241,17 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="carModel">
+    <Component class="javax.swing.JTextField" name="carModelField">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
+          <Color blue="66" green="66" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carModelActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carModelFieldActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -241,7 +259,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JComboBox" name="carColor1">
+    <Component class="javax.swing.JComboBox" name="carColorOption">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -250,7 +268,7 @@
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
+          <StringArray count="29">
             <StringItem index="0" value="White"/>
             <StringItem index="1" value="Black"/>
             <StringItem index="2" value="Silver"/>
@@ -262,6 +280,24 @@
             <StringItem index="8" value="Pink"/>
             <StringItem index="9" value="Violet"/>
             <StringItem index="10" value="Cyan"/>
+            <StringItem index="11" value="Orange"/>
+            <StringItem index="12" value="Brown"/>
+            <StringItem index="13" value="Beige / Champagne"/>
+            <StringItem index="14" value="Maroon / Burgundy"/>
+            <StringItem index="15" value="Gold"/>
+            <StringItem index="16" value="Teal"/>
+            <StringItem index="17" value="Turquoise"/>
+            <StringItem index="18" value="Magenta"/>
+            <StringItem index="19" value="Copper"/>
+            <StringItem index="20" value="Bronze"/>
+            <StringItem index="21" value="Navy Blue"/>
+            <StringItem index="22" value="Charcoal"/>
+            <StringItem index="23" value="Lime Green"/>
+            <StringItem index="24" value="Tan"/>
+            <StringItem index="25" value="Cream / Off-white"/>
+            <StringItem index="26" value="Pearl White "/>
+            <StringItem index="27" value="Matte Black"/>
+            <StringItem index="28" value="Gunmetal Gray"/>
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -271,7 +307,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carColor1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carColorOptionActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -282,17 +318,17 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="carPlateNumber">
+    <Component class="javax.swing.JTextField" name="carPlateNumberField">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
+          <Color blue="66" green="66" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carPlateNumberActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carPlateNumberFieldActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -319,7 +355,7 @@
     <Component class="javax.swing.JTextField" name="carIDField">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="ff" type="rgb"/>
+          <Color blue="66" green="66" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tw Cen MT Condensed" size="18" style="1"/>

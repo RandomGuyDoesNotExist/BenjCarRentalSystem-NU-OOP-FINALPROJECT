@@ -26,21 +26,28 @@ public class Login extends javax.swing.JFrame{
     String username,password;
     String test = "benj";
     public Login() {
+        this.setSize(1005, 653);
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
-        username = jTextField1.getText();
-        password = String.valueOf(jPasswordField1.getPassword());
+
         
         
       
         
     }
     public void login(){ //MONGODB WAY
+        
+    username = jTextField1.getText();
+    password = String.valueOf(jPasswordField1.getPassword());
+        
+    // DATABASE SET UP     
     try(MongoClient client = MongoClients.create("mongodb://localhost:27017")){
         
     MongoDatabase database = client.getDatabase("CRS");
     MongoCollection<Document> logInCollection = database.getCollection("LogInCollection");
           
+    //MATCH USERNAME TO PASSWORD 
+    //DOCUMENT OBJECT IS USED 
     Document query = new Document("username", username)
             .append("password", password);
     
@@ -53,6 +60,8 @@ public class Login extends javax.swing.JFrame{
     }
     else{
         JOptionPane.showMessageDialog(null,"Invalid username and password.");
+        jTextField1.setText("");
+        jPasswordField1.setText("");
     }
     } catch(Exception ex){
     ex.printStackTrace(); 
@@ -97,6 +106,8 @@ public class Login extends javax.swing.JFrame{
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1080, 654));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         aboutUs.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
@@ -290,7 +301,7 @@ public class Login extends javax.swing.JFrame{
         getContentPane().add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 340, 620));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resizedbg.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1040, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1040, 670));
 
         jPanel2.setBackground(new java.awt.Color(247, 249, 226));
 
@@ -307,7 +318,7 @@ public class Login extends javax.swing.JFrame{
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 650));
 
-        setSize(new java.awt.Dimension(983, 662));
+        setSize(new java.awt.Dimension(983, 688));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

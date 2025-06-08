@@ -19,13 +19,13 @@ import org.bson.Document;
  *
  * @author BenjZionGMoedillas
  */
-public class RemoveCarPage extends javax.swing.JPanel {
+public class Clients extends javax.swing.JPanel {
 
     /**
      * Creates new form AddCarPage
      */
     String search; 
-    public RemoveCarPage() {
+    public Clients() {
         initComponents();
         retrieveData();
         refreshTable();
@@ -43,43 +43,44 @@ public class RemoveCarPage extends javax.swing.JPanel {
         carSearchText = new javax.swing.JLabel();
         companyName1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
-        carListingText = new javax.swing.JLabel();
-        carIdSearchField = new javax.swing.JTextField();
+        clientTable = new javax.swing.JTable();
+        userIdSearchField = new javax.swing.JTextField();
+        removeUserButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
-        removeCarButton1 = new javax.swing.JButton();
         smallDoodleBackground = new javax.swing.JLabel();
         DoodleBackground = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        carSearchText.setBackground(new java.awt.Color(55, 6, 6));
         carSearchText.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        carSearchText.setForeground(new java.awt.Color(255, 0, 0));
-        carSearchText.setText("ENTER CAR ID NUMBER ");
+        carSearchText.setForeground(new java.awt.Color(55, 6, 6));
+        carSearchText.setText("ENTER USER ID NUMBER ");
         add(carSearchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 40));
 
+        companyName1.setBackground(new java.awt.Color(55, 6, 6));
         companyName1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
-        companyName1.setForeground(new java.awt.Color(255, 0, 0));
-        companyName1.setText("REMOVE A CAR");
+        companyName1.setForeground(new java.awt.Color(55, 6, 6));
+        companyName1.setText("LIST OF CLIENTS");
         add(companyName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 210, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 102, 102));
 
-        table.setBackground(new java.awt.Color(255, 102, 102));
-        table.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        clientTable.setBackground(new java.awt.Color(255, 102, 102));
+        clientTable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        clientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Car ID ", "Car Brand", "Car Model", "Year", "Color", "Plate Number"
+                "Client ID ", "Client Name", "Contact", "RentalStatus"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true
+                false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -90,28 +91,34 @@ public class RemoveCarPage extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(table);
-        if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setResizable(false);
+        jScrollPane1.setViewportView(clientTable);
+        if (clientTable.getColumnModel().getColumnCount() > 0) {
+            clientTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 690, 330));
 
-        carListingText.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        carListingText.setForeground(new java.awt.Color(255, 0, 0));
-        carListingText.setText("CAR LISTINGS");
-        add(carListingText, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 140, 40));
-
-        carIdSearchField.setBackground(new java.awt.Color(255, 102, 102));
-        carIdSearchField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carIdSearchField.addActionListener(new java.awt.event.ActionListener() {
+        userIdSearchField.setBackground(new java.awt.Color(255, 102, 102));
+        userIdSearchField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        userIdSearchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carIdSearchFieldActionPerformed(evt);
+                userIdSearchFieldActionPerformed(evt);
             }
         });
-        add(carIdSearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 40));
+        add(userIdSearchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 240, 40));
 
-        refreshButton.setBackground(new java.awt.Color(255, 0, 0));
+        removeUserButton.setBackground(new java.awt.Color(43, 13, 13));
+        removeUserButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        removeUserButton.setForeground(new java.awt.Color(255, 255, 255));
+        removeUserButton.setText("REMOVE USER");
+        removeUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeUserButtonActionPerformed(evt);
+            }
+        });
+        add(removeUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 250, 60));
+
+        refreshButton.setBackground(new java.awt.Color(43, 13, 13));
         refreshButton.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
         refreshButton.setForeground(new java.awt.Color(255, 255, 255));
         refreshButton.setText("REFRESH TABLE");
@@ -121,17 +128,6 @@ public class RemoveCarPage extends javax.swing.JPanel {
             }
         });
         add(refreshButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 230, 60));
-
-        removeCarButton1.setBackground(new java.awt.Color(255, 0, 0));
-        removeCarButton1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        removeCarButton1.setForeground(new java.awt.Color(255, 255, 255));
-        removeCarButton1.setText("REMOVE CAR");
-        removeCarButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeCarButton1ActionPerformed(evt);
-            }
-        });
-        add(removeCarButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 250, 60));
 
         smallDoodleBackground.setBackground(new java.awt.Color(51, 51, 51));
         smallDoodleBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/doodle2.png"))); // NOI18N
@@ -146,37 +142,33 @@ public class RemoveCarPage extends javax.swing.JPanel {
     try(MongoClient client = MongoClients.create("mongodb://localhost:27017")){
         
     MongoDatabase database = client.getDatabase("CRS");
-    MongoCollection<Document> CarsCollection = database.getCollection("Cars");
+    MongoCollection<Document> UsersCollection = database.getCollection("Users");
     
-    FindIterable<Document> findIterable = CarsCollection.find();
+    FindIterable<Document> findIterable = UsersCollection.find();
     Iterator<Document> iterator = findIterable.iterator(); 
     while(iterator.hasNext()){
         Document document = iterator.next();
-         //carIdTable = document.get("carId");
-        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),document.get("year"),document.get("color"),document.get("plateNumber")};
+        Object[] row = {document.get("userId"),document.get("name"),document.get("contact")};
         
-        DefaultTableModel model = (DefaultTableModel)table.getModel();
+        DefaultTableModel model = (DefaultTableModel)clientTable.getModel();
         model.addRow(row);
-        model.fireTableDataChanged();
     }   
         }catch(Exception ex){
             ex.printStackTrace();
         } 
     }
     
-    //REMOVE AN OBJECT
+    //REMOVE A USER
     public void removeData(){
-        search = carIdSearchField.getText();
+        search = userIdSearchField.getText();
         
     try(MongoClient client = MongoClients.create("mongodb://localhost:27017")){
         
     MongoDatabase database = client.getDatabase("CRS");
-    MongoCollection<Document> CarsCollection = database.getCollection("Cars");
+    MongoCollection<Document> CarsCollection = database.getCollection("Users");
     
-        Document document = CarsCollection.findOneAndDelete(Filters.eq("carId",search));
-        DefaultTableModel model = (DefaultTableModel)table.getModel();
-       //model.removeRow(ERROR);
-        //model.fireTableDataChanged();
+        Document document = CarsCollection.findOneAndDelete(Filters.eq("userId",search));
+        DefaultTableModel model = (DefaultTableModel)clientTable.getModel();
         retrieveData();
         
         }catch(Exception ex){
@@ -189,21 +181,20 @@ public class RemoveCarPage extends javax.swing.JPanel {
       public void refreshTable(){
          try (MongoClient client = MongoClients.create("mongodb://localhost:27017")) {
         MongoDatabase database = client.getDatabase("CRS");
-        MongoCollection<Document> CarsCollection = database.getCollection("Cars");
+        MongoCollection<Document> UsersCollection = database.getCollection("Users");
 
-        FindIterable<Document> findIterable = CarsCollection.find();
+        FindIterable<Document> findIterable = UsersCollection.find();
         
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        DefaultTableModel model = (DefaultTableModel) clientTable.getModel();
         model.setRowCount(0); 
 
         for (Document document : findIterable) {
             Object[] row = {
-                document.get("carId"),
-                document.get("carBrand"),
-                document.get("carModel"),
-                document.get("year"),
-                document.get("color"),
-                document.get("plateNumber")
+                document.get("userId"),
+                document.get("name"),
+                document.get("contact"),
+                document.get("rentedString")
+  
             };
             model.addRow(row);
         }
@@ -212,36 +203,37 @@ public class RemoveCarPage extends javax.swing.JPanel {
         ex.printStackTrace();
     }
 }
-                
+
+      
+      
        
-    private void carIdSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carIdSearchFieldActionPerformed
+    private void userIdSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIdSearchFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carIdSearchFieldActionPerformed
+    }//GEN-LAST:event_userIdSearchFieldActionPerformed
 
     private void refreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshButtonActionPerformed
         // TODO add your handling code here:
-          refreshTable();
+        refreshTable();
     }//GEN-LAST:event_refreshButtonActionPerformed
 
-    private void removeCarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCarButton1ActionPerformed
+    private void removeUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeUserButtonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null,"This data will be removed, are you sure you want to continue?");
+        JOptionPane.showMessageDialog(null,"This user data will be removed, are you sure you want to continue?");
         removeData();
         refreshTable();
-        carIdSearchField.setText("");
-    }//GEN-LAST:event_removeCarButton1ActionPerformed
+        userIdSearchField.setText("");
+    }//GEN-LAST:event_removeUserButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DoodleBackground;
-    private javax.swing.JTextField carIdSearchField;
-    private javax.swing.JLabel carListingText;
     private javax.swing.JLabel carSearchText;
+    private javax.swing.JTable clientTable;
     private javax.swing.JLabel companyName1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshButton;
-    private javax.swing.JButton removeCarButton1;
+    private javax.swing.JButton removeUserButton;
     private javax.swing.JLabel smallDoodleBackground;
-    private javax.swing.JTable table;
+    private javax.swing.JTextField userIdSearchField;
     // End of variables declaration//GEN-END:variables
 }

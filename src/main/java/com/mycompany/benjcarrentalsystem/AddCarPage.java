@@ -4,6 +4,13 @@
  */
 package com.mycompany.benjcarrentalsystem;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import javax.swing.JOptionPane;
+import org.bson.Document;
+
 /**
  *
  * @author BenjZionGMoedillas
@@ -13,10 +20,63 @@ public class AddCarPage extends javax.swing.JPanel {
     /**
      * Creates new form AddCarPage
      */
+    String carBrand, carModel, year,color,carType,carPlateNumber,carId;
     public AddCarPage() {
         initComponents();
     }
 
+    public void addCar(){
+     carBrand = (String)carBrandOption.getSelectedItem();
+     carType = (String)carTypeOption.getSelectedItem();
+     carModel = carModelField.getText();
+     year = carYearField.getText();
+     color = (String)carColorOption.getSelectedItem();
+     carPlateNumber = carPlateNumberField.getText();
+     carId = carIDField.getText();
+       // DATABASE SET UP     
+    try(MongoClient client = MongoClients.create("mongodb://localhost:27017")){
+        
+    MongoDatabase database = client.getDatabase("CRS");
+    MongoCollection<Document> CarsCollection = database.getCollection("Cars");
+         
+    Document carEntry = new Document("carId",carId)
+            .append("carBrand",carBrand)
+            .append("carModel", carModel)
+            .append("year",year)
+            .append("color",color)
+            .append("carType",carType)
+            .append("plateNumber",carPlateNumber)
+            .append("rented",false)
+            .append("rentedUser",null) // <--- this should be userid that will have other attributes like name and contact number
+            .append("rentDuration",null)
+            .append("rentedString","No")
+            .append("duration",""); //  <---- new addition
+      
+    CarsCollection.insertOne(carEntry);
+    JOptionPane.showMessageDialog(null,"Car Entry Successfully Created!.");
+    clearFields();
+    
+    } catch(Exception ex){
+    ex.printStackTrace(); 
+    }
+    }
+    
+    public void clearFields(){
+        carTypeOption.setSelectedIndex(0);
+        carColorOption.setSelectedIndex(0);
+        carBrandOption.setSelectedIndex(0);
+        carTypeOption.setSelectedIndex(0);
+        carModelField.setText("");
+        carYearField.setText("");
+        carIDField.setText("");
+        carPlateNumberField.setText("");
+        
+    }
+    
+    public boolean sendUpdate(){
+        return true;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,15 +90,15 @@ public class AddCarPage extends javax.swing.JPanel {
         companyName1 = new javax.swing.JLabel();
         carTypeText = new javax.swing.JLabel();
         carBrandText = new javax.swing.JLabel();
-        carType = new javax.swing.JComboBox<>();
-        carBrand = new javax.swing.JComboBox<>();
-        carYear = new javax.swing.JTextField();
+        carTypeOption = new javax.swing.JComboBox<>();
+        carBrandOption = new javax.swing.JComboBox<>();
+        carYearField = new javax.swing.JTextField();
         carModelText = new javax.swing.JLabel();
         carYearText1 = new javax.swing.JLabel();
         carColorText1 = new javax.swing.JLabel();
-        carModel = new javax.swing.JTextField();
-        carColor1 = new javax.swing.JComboBox<>();
-        carPlateNumber = new javax.swing.JTextField();
+        carModelField = new javax.swing.JTextField();
+        carColorOption = new javax.swing.JComboBox<>();
+        carPlateNumberField = new javax.swing.JTextField();
         carIDText = new javax.swing.JLabel();
         carIDField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -67,36 +127,36 @@ public class AddCarPage extends javax.swing.JPanel {
         carBrandText.setText("CAR BRAND");
         add(carBrandText, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, 40));
 
-        carType.setBackground(new java.awt.Color(255, 51, 51));
-        carType.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2-Seater", "4-Seater", "5-Seater", "7-Seater", "8+ Seater" }));
-        carType.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        carType.addActionListener(new java.awt.event.ActionListener() {
+        carTypeOption.setBackground(new java.awt.Color(255, 51, 51));
+        carTypeOption.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carTypeOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2-Seater", "4-Seater", "5-Seater", "6-Seater", "7-Seater", "8+ Seater" }));
+        carTypeOption.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        carTypeOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carTypeActionPerformed(evt);
+                carTypeOptionActionPerformed(evt);
             }
         });
-        add(carType, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 240, 40));
+        add(carTypeOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 240, 40));
 
-        carBrand.setBackground(new java.awt.Color(255, 51, 51));
-        carBrand.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toyota", "Honda", "Nissan", "Hyundai", "Kia", "Ford", "Chevrolet", "Mazda", "Volkswagen", "Mitsubishi" }));
-        carBrand.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        carBrand.addActionListener(new java.awt.event.ActionListener() {
+        carBrandOption.setBackground(new java.awt.Color(255, 51, 51));
+        carBrandOption.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carBrandOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toyota", "Honda", "Nissan", "Hyundai", "Kia", "Ford", "Chevrolet", "Mazda", "Volkswagen", "Mitsubishi", "Tesla", "Mercedes-Benz", "BMW", "Audi", "Lexus", "Cadillac", "Genesis", "Volvo", "Acura", "Infiniti", "LincolnLamborghini", "Ferrari", "Bentley", "Rolls-Royce", "Aston Martin", "McLaren", "Bugatti" }));
+        carBrandOption.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        carBrandOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carBrandActionPerformed(evt);
+                carBrandOptionActionPerformed(evt);
             }
         });
-        add(carBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 240, 40));
+        add(carBrandOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 240, 40));
 
-        carYear.setBackground(new java.awt.Color(255, 153, 153));
-        carYear.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carYear.addActionListener(new java.awt.event.ActionListener() {
+        carYearField.setBackground(new java.awt.Color(255, 102, 102));
+        carYearField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carYearField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carYearActionPerformed(evt);
+                carYearFieldActionPerformed(evt);
             }
         });
-        add(carYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 240, 40));
+        add(carYearField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 240, 40));
 
         carModelText.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         carModelText.setForeground(new java.awt.Color(255, 0, 0));
@@ -113,41 +173,41 @@ public class AddCarPage extends javax.swing.JPanel {
         carColorText1.setText("CAR COLOR");
         add(carColorText1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 140, 40));
 
-        carModel.setBackground(new java.awt.Color(255, 153, 153));
-        carModel.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carModel.addActionListener(new java.awt.event.ActionListener() {
+        carModelField.setBackground(new java.awt.Color(255, 102, 102));
+        carModelField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carModelField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carModelActionPerformed(evt);
+                carModelFieldActionPerformed(evt);
             }
         });
-        add(carModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 240, 40));
+        add(carModelField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 240, 40));
 
-        carColor1.setBackground(new java.awt.Color(255, 51, 51));
-        carColor1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carColor1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "White", "Black", "Silver", "Gray", "Blue", "Red", "Yellow", "Green", "Pink", "Violet", "Cyan" }));
-        carColor1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        carColor1.addActionListener(new java.awt.event.ActionListener() {
+        carColorOption.setBackground(new java.awt.Color(255, 51, 51));
+        carColorOption.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carColorOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "White", "Black", "Silver", "Gray", "Blue", "Red", "Yellow", "Green", "Pink", "Violet", "Cyan", "Orange", "Brown", "Beige / Champagne", "Maroon / Burgundy", "Gold", "Teal", "Turquoise", "Magenta", "Copper", "Bronze", "Navy Blue", "Charcoal", "Lime Green", "Tan", "Cream / Off-white", "Pearl White ", "Matte Black", "Gunmetal Gray" }));
+        carColorOption.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        carColorOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carColor1ActionPerformed(evt);
+                carColorOptionActionPerformed(evt);
             }
         });
-        add(carColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 240, 40));
+        add(carColorOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 240, 40));
 
-        carPlateNumber.setBackground(new java.awt.Color(255, 153, 153));
-        carPlateNumber.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
-        carPlateNumber.addActionListener(new java.awt.event.ActionListener() {
+        carPlateNumberField.setBackground(new java.awt.Color(255, 102, 102));
+        carPlateNumberField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
+        carPlateNumberField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                carPlateNumberActionPerformed(evt);
+                carPlateNumberFieldActionPerformed(evt);
             }
         });
-        add(carPlateNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 240, 40));
+        add(carPlateNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 240, 40));
 
         carIDText.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         carIDText.setForeground(new java.awt.Color(255, 0, 0));
         carIDText.setText("CAR ID");
         add(carIDText, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 140, 40));
 
-        carIDField.setBackground(new java.awt.Color(255, 153, 153));
+        carIDField.setBackground(new java.awt.Color(255, 102, 102));
         carIDField.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 18)); // NOI18N
         carIDField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,24 +235,26 @@ public class AddCarPage extends javax.swing.JPanel {
         add(DoodleBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 740, 570));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void carTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carTypeActionPerformed
+    private void carTypeOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carTypeOptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carTypeActionPerformed
+    }//GEN-LAST:event_carTypeOptionActionPerformed
 
-    private void carBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carBrandActionPerformed
+    private void carBrandOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carBrandOptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carBrandActionPerformed
+    }//GEN-LAST:event_carBrandOptionActionPerformed
 
-    private void carColor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carColor1ActionPerformed
+    private void carColorOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carColorOptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carColor1ActionPerformed
+    }//GEN-LAST:event_carColorOptionActionPerformed
 
-    private void carPlateNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carPlateNumberActionPerformed
+    private void carPlateNumberFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carPlateNumberFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carPlateNumberActionPerformed
+    }//GEN-LAST:event_carPlateNumberFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        addCar();
+        
         System.out.printf("Button is working");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -200,30 +262,30 @@ public class AddCarPage extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_carIDFieldActionPerformed
 
-    private void carModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carModelActionPerformed
+    private void carModelFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carModelFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carModelActionPerformed
+    }//GEN-LAST:event_carModelFieldActionPerformed
 
-    private void carYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carYearActionPerformed
+    private void carYearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carYearFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_carYearActionPerformed
+    }//GEN-LAST:event_carYearFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DoodleBackground;
-    private javax.swing.JComboBox<String> carBrand;
+    private javax.swing.JComboBox<String> carBrandOption;
     private javax.swing.JLabel carBrandText;
-    private javax.swing.JComboBox<String> carColor1;
+    private javax.swing.JComboBox<String> carColorOption;
     private javax.swing.JLabel carColorText1;
     private javax.swing.JTextField carIDField;
     private javax.swing.JLabel carIDText;
-    private javax.swing.JTextField carModel;
+    private javax.swing.JTextField carModelField;
     private javax.swing.JLabel carModelText;
-    private javax.swing.JTextField carPlateNumber;
+    private javax.swing.JTextField carPlateNumberField;
     private javax.swing.JLabel carPlateNumberText;
-    private javax.swing.JComboBox<String> carType;
+    private javax.swing.JComboBox<String> carTypeOption;
     private javax.swing.JLabel carTypeText;
-    private javax.swing.JTextField carYear;
+    private javax.swing.JTextField carYearField;
     private javax.swing.JLabel carYearText1;
     private javax.swing.JLabel companyName1;
     private javax.swing.JButton jButton1;
