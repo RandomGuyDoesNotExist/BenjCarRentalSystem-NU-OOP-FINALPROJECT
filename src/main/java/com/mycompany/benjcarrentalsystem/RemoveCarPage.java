@@ -153,7 +153,8 @@ public class RemoveCarPage extends javax.swing.JPanel {
     while(iterator.hasNext()){
         Document document = iterator.next();
          //carIdTable = document.get("carId");
-        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),document.get("year"),document.get("color"),document.get("plateNumber")};
+        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),
+                        document.get("year"),document.get("color"),document.get("plateNumber")};
         
         DefaultTableModel model = (DefaultTableModel)table.getModel();
         model.addRow(row);
@@ -184,7 +185,6 @@ public class RemoveCarPage extends javax.swing.JPanel {
         }
         
     }
-    
     // REFRESH THE TABLE
       public void refreshTable(){
          try (MongoClient client = MongoClients.create("mongodb://localhost:27017")) {

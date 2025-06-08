@@ -1,0 +1,230 @@
+[{
+  "_id": {
+    "$oid": "6844870467053498b11c5b62"
+  },
+  "userId": "0001",
+  "name": "Jericho Trillanes",
+  "contact": "092485443",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "6845246b50ef2cc6161d4043"
+  },
+  "userId": "0002",
+  "name": "James Tanglao",
+  "contact": "09642973",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "6845249850ef2cc6161d4044"
+  },
+  "userId": "0003",
+  "name": "Amiel Pandakaki",
+  "contact": "09457979",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684532e250ef2cc6161d404d"
+  },
+  "userId": "0004",
+  "name": "Allan Lucas",
+  "contact": "0021745880",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "6845334150ef2cc6161d4051"
+  },
+  "userId": "0008",
+  "name": "Test3",
+  "contact": "Test3",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "6845334b50ef2cc6161d4052"
+  },
+  "userId": "0009",
+  "name": "Test4",
+  "contact": "Test4",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "684586a035e1662733fc7d4b"
+  },
+  "userId": "0010",
+  "name": "Kenneth Miranda",
+  "contact": "Km@gmail.com",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "6845881635e1662733fc7d4c"
+  },
+  "userId": "0011",
+  "name": "Bea dela Cruz",
+  "contact": "094883332",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "6845884b35e1662733fc7d4d"
+  },
+  "userId": "0012",
+  "name": "Chelsie T. Moedillas",
+  "contact": "090705031506",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684588a135e1662733fc7d4e"
+  },
+  "userId": "0013",
+  "name": "Bels T. Moedillas",
+  "contact": "090705031506",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684588e435e1662733fc7d4f"
+  },
+  "userId": "0014",
+  "name": "Kuromi T. Moedillas",
+  "contact": "090705031506",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684588f535e1662733fc7d50"
+  },
+  "userId": "0015",
+  "name": "Riley T. Moedillas",
+  "contact": "090705031506",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "6845890f35e1662733fc7d51"
+  },
+  "userId": "0016",
+  "name": "Izhie T. Moedillas",
+  "contact": "090705031506",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "6845895435e1662733fc7d52"
+  },
+  "userId": "0020",
+  "name": "Adolf Hitler",
+  "contact": "1945",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684589a835e1662733fc7d54"
+  },
+  "userId": "0018",
+  "name": "George Floyd",
+  "contact": "2019",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "684589cd35e1662733fc7d55"
+  },
+  "userId": "0019",
+  "name": "Joe Biden",
+  "contact": "2020-2024",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "68458a2835e1662733fc7d56"
+  },
+  "userId": "0021",
+  "name": "P Diddy",
+  "contact": "99999999",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "68458a4035e1662733fc7d57"
+  },
+  "userId": "0022",
+  "name": "Osama Bin Laden",
+  "contact": "098433332",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "68458a8f35e1662733fc7d58"
+  },
+  "userId": "0024",
+  "name": "Shinzo Abe",
+  "contact": "094355567",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "68458abf35e1662733fc7d59"
+  },
+  "userId": "0023",
+  "name": "Tung tung tung sahur",
+  "contact": "20252025",
+  "rented": false,
+  "rentedString": "Not Rented"
+},
+{
+  "_id": {
+    "$oid": "68458aed35e1662733fc7d5a"
+  },
+  "userId": "0025",
+  "name": "Fernao D. Magalhaes",
+  "contact": "1565",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "68458b1f35e1662733fc7d5b"
+  },
+  "userId": "0026",
+  "name": "Joan de Portocarero",
+  "contact": "1565-1592",
+  "rented": true,
+  "rentedString": "Rented A Car"
+},
+{
+  "_id": {
+    "$oid": "68458b3f35e1662733fc7d5c"
+  },
+  "userId": "0027",
+  "name": "Kanye D. East",
+  "contact": "03903443",
+  "rented": false,
+  "rentedString": "Not Rented"
+}]

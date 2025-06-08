@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "684419a667053498b11c5b55"
+  },
+  "username": "benj",
+  "password": "hi"
+},
+{
+  "_id": {
+    "$oid": "684452ab67053498b11c5b5e"
+  },
+  "username": "admin",
+  "password": "123"
+},
+{
+  "_id": {
+    "$oid": "6845264850ef2cc6161d4049"
+  },
+  "username": "bailonpogi",
+  "password": "malboro"
+},
+{
+  "_id": {
+    "$oid": "6845859b0f42357572aa59fe"
+  },
+  "username": "Ronin",
+  "password": "Salao",
+  "name": "Ronin Salao",
+  "contactNo": "98906845"
+},
+{
+  "_id": {
+    "$oid": "684596d92c562b3bc23f1cfb"
+  },
+  "username": "Avery",
+  "password": "God",
+  "name": "Avery Manzon",
+  "contactNo": "98954895"
+}]

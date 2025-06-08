@@ -254,7 +254,6 @@ public class AddCarPage extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         addCar();
-        
         System.out.printf("Button is working");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -269,7 +268,6 @@ public class AddCarPage extends javax.swing.JPanel {
     private void carYearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carYearFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_carYearFieldActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DoodleBackground;

@@ -1,0 +1,318 @@
+[{
+  "_id": {
+    "$oid": "6844507e41282e3b2f1d3847"
+  },
+  "carId": "2312",
+  "carBrand": "Nissan",
+  "carModel": "Prius ",
+  "year": "2009",
+  "color": "Yellow",
+  "carType": "4-Seater",
+  "plateNumber": "ABC374",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": "",
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684450ca41282e3b2f1d3849"
+  },
+  "carId": "2313",
+  "carBrand": "Ford",
+  "carModel": "aLbius G Pro",
+  "year": "2016",
+  "color": "Black",
+  "carType": "7-Seater",
+  "plateNumber": "CBR457",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": "",
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684453006e239cab95d606bb"
+  },
+  "carId": "8942",
+  "carBrand": "Chevrolet",
+  "carModel": "GTX831 SPORT",
+  "year": "2008",
+  "color": "Gray",
+  "carType": "2-Seater",
+  "plateNumber": "HUD2953",
+  "rented": false,
+  "rentedUser": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "68447efb62e9c4f034a008d5"
+  },
+  "carId": "1",
+  "carBrand": "Toyota",
+  "carModel": "LandCruiser Prado",
+  "year": "2014",
+  "color": "Black",
+  "carType": "7-Seater",
+  "plateNumber": "CPA9276",
+  "rented": false,
+  "rentedUser": "",
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "68447f5e62e9c4f034a008d7"
+  },
+  "carId": "3333",
+  "carBrand": "Toyota",
+  "carModel": "broom broom",
+  "year": "2001",
+  "color": "Black",
+  "carType": "5-Seater",
+  "plateNumber": "BLCK734",
+  "rented": false,
+  "rentedUser": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "68447f9d62e9c4f034a008db"
+  },
+  "carId": "02354",
+  "carBrand": "Kia",
+  "carModel": "Van Prim X",
+  "year": "2012",
+  "color": "Yellow",
+  "carType": "8+ Seater",
+  "plateNumber": "VPX3567",
+  "rented": false,
+  "rentedUser": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684483898d52dd583bbf4360"
+  },
+  "carId": "8543",
+  "carBrand": "Honda",
+  "carModel": "Honda gok gok gok",
+  "year": "2008",
+  "color": "Gray",
+  "carType": "7-Seater",
+  "plateNumber": "4rdg4",
+  "rented": false,
+  "rentedUser": "",
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "68455f06ea8d21e0a143e430"
+  },
+  "carId": "91",
+  "carBrand": "Chevrolet",
+  "carModel": "VroomX4",
+  "year": "2015",
+  "color": "Blue",
+  "carType": "7-Seater",
+  "plateNumber": "HFD8433",
+  "rented": true,
+  "rentedUser": "Jericho Trillanes",
+  "rentDuration": null,
+  "rentedString": "Yes",
+  "duration": "1 Day"
+},
+{
+  "_id": {
+    "$oid": "6845604f2891cc3ba3c517dd"
+  },
+  "carId": "00231",
+  "carBrand": "Ford",
+  "carModel": "DHFD",
+  "year": "2003",
+  "color": "Red",
+  "carType": "5-Seater",
+  "plateNumber": "UHFGUI D3342",
+  "rented": true,
+  "rentedUser": "Joan de Portocarero",
+  "rentDuration": null,
+  "rentedString": "Yes",
+  "duration": "2 Days"
+},
+{
+  "_id": {
+    "$oid": "68457dc2396d4de492c4dda6"
+  },
+  "carId": "Ladisla",
+  "carBrand": "Volkswagen",
+  "carModel": "L300",
+  "year": "2000",
+  "color": "Gray",
+  "carType": "8+ Seater",
+  "plateNumber": "TYS463",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684580e3396d4de492c4ddb7"
+  },
+  "carId": "5546",
+  "carBrand": "Mazda",
+  "carModel": "CX-5",
+  "year": "2009",
+  "color": "White",
+  "carType": "4-Seater",
+  "plateNumber": "HXV7634",
+  "rented": true,
+  "rentedUser": "Fernao D. Magalhaes",
+  "rentDuration": null,
+  "rentedString": "Yes",
+  "duration": "2 Days"
+},
+{
+  "_id": {
+    "$oid": "68458116396d4de492c4ddb9"
+  },
+  "carId": "0022",
+  "carBrand": "Mazda",
+  "carModel": "Sedan",
+  "year": "2008",
+  "color": "Gray",
+  "carType": "4-Seater",
+  "plateNumber": "BXB854",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "68458148396d4de492c4ddbb"
+  },
+  "carId": "0023",
+  "carBrand": "Mazda",
+  "carModel": "CX-30",
+  "year": "2013",
+  "color": "Red",
+  "carType": "7-Seater",
+  "plateNumber": "CXV6255",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684585ce0f42357572aa5a07"
+  },
+  "carId": "0024",
+  "carBrand": "Bugatti",
+  "carModel": "Chiron",
+  "year": "2016",
+  "color": "Orange",
+  "carType": "2-Seater",
+  "plateNumber": "VRM903",
+  "rented": false,
+  "rentedUser": "",
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684585f40f42357572aa5a09"
+  },
+  "carId": "0025",
+  "carBrand": "Bugatti",
+  "carModel": "Veyron",
+  "year": "2019",
+  "color": "Blue",
+  "carType": "2-Seater",
+  "plateNumber": "VRM934",
+  "rented": true,
+  "rentedUser": "Allan Lucas",
+  "rentDuration": null,
+  "rentedString": "Yes",
+  "duration": "1 Day"
+},
+{
+  "_id": {
+    "$oid": "68458bbe0f42357572aa5a21"
+  },
+  "carId": "Pink09",
+  "carBrand": "Volvo",
+  "carModel": "SportX",
+  "year": "2022",
+  "color": "Pink",
+  "carType": "6-Seater",
+  "plateNumber": "PNK0907",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684597072c562b3bc23f1d04"
+  },
+  "carId": "9043",
+  "carBrand": "Ford",
+  "carModel": "L300",
+  "year": "1654",
+  "color": "Charcoal",
+  "carType": "8+ Seater",
+  "plateNumber": "NIG573",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "684598a099e6e7040a249fa6"
+  },
+  "carId": "BATMAN09",
+  "carBrand": "Cadillac",
+  "carModel": "BAT MOBILE",
+  "year": "2014",
+  "color": "Matte Black",
+  "carType": "4-Seater",
+  "plateNumber": "BAT9023MAN",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+},
+{
+  "_id": {
+    "$oid": "6845b2fa96577b8b7b58939f"
+  },
+  "carId": "3045",
+  "carBrand": "Kia",
+  "carModel": "Platinum",
+  "year": "2008",
+  "color": "Navy Blue",
+  "carType": "2-Seater",
+  "plateNumber": "VYP780",
+  "rented": false,
+  "rentedUser": null,
+  "rentDuration": null,
+  "rentedString": "No",
+  "duration": ""
+}]

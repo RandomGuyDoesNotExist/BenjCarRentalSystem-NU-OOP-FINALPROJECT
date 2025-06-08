@@ -10,12 +10,10 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import javax.swing.JOptionPane;
 import org.bson.Document;
-
 /**
  *
  * @author ADMIN
  */
-    
 public class SignUp extends javax.swing.JFrame {
     String username,password,name,contactNo;
     public SignUp() {
@@ -23,9 +21,6 @@ public class SignUp extends javax.swing.JFrame {
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
     }
 
-
-    
-    
     public void signUpUser() {
 
      username = userNameField.getText();
@@ -61,20 +56,7 @@ public class SignUp extends javax.swing.JFrame {
         
     }
 }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

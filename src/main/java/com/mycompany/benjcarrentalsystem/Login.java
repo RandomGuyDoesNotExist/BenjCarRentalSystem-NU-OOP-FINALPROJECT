@@ -30,10 +30,6 @@ public class Login extends javax.swing.JFrame{
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
 
-        
-        
-      
-        
     }
     public void login(){ //MONGODB WAY
         
@@ -324,7 +320,6 @@ public class Login extends javax.swing.JFrame{
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -373,12 +368,10 @@ public class Login extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
-                
+                new Login().setVisible(true);  
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CarIcon;
     private javax.swing.JPanel SidePanel;
@@ -408,6 +401,5 @@ public class Login extends javax.swing.JFrame{
     private javax.swing.JLabel upShadow1;
     private javax.swing.JLabel upShadow2;
     // End of variables declaration//GEN-END:variables
-
 
 }

@@ -22,11 +22,8 @@ public class MainPage extends javax.swing.JFrame {
         initComponents();
         setTitle("SUNSET DRIVE CAR RENTAL SYSTEM");
         initCards();
-        
           cardLayout=(CardLayout)jPanel1.getLayout();
-          cardLayout.show(jPanel1, "addCarPage1");
-          
-          
+          cardLayout.show(jPanel1, "addCarPage1");   
     }
     
     public void initCards(){
@@ -45,9 +42,7 @@ public class MainPage extends javax.swing.JFrame {
         this.dispose();
     } else {
     }
-        
-        
-        
+
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
