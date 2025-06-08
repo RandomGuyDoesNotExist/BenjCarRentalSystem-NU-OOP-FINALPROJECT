@@ -35,7 +35,8 @@ public class RentalStatusPage extends javax.swing.JPanel {
     Iterator<Document> iterator = findIterable.iterator(); 
     while(iterator.hasNext()){
         Document document = iterator.next();
-        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),document.get("color"),document.get("plateNumber"),document.get("rentedString"),
+     Object[] row = {document.get("carId"),document.get("carBrand"),document.get
+    ("carModel"),document.get("color"),document.get("plateNumber"),document.get("rentedString"),
         document.get("rentedUser"),document.get("duration")};
         
         DefaultTableModel model = (DefaultTableModel)table.getModel();

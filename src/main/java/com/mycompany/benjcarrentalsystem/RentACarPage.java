@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.benjcarrentalsystem;
-
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -15,21 +14,17 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.bson.Document;
-
 /**
  *
  * @author BenjZionGMoedillas
  */
 public class RentACarPage extends javax.swing.JPanel {
 
-    
     String userId, carId, duration ; 
     public RentACarPage() {
         initComponents();
         retrieveData();
     }
-
-
     // DISPLAY DATA IN TABLE
     public void retrieveData(){
     MongoClient client = MongoClients.create("mongodb://localhost:27017");
@@ -41,8 +36,7 @@ public class RentACarPage extends javax.swing.JPanel {
     Iterator<Document> iterator = findIterable.iterator(); 
     while(iterator.hasNext()){
         Document document = iterator.next();
-        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),document.get("year"),document.get("color"),document.get("plateNumber"),document.get("rentedString"),
-        document.get("rentedUser"),document.get(duration)};
+        Object[] row = {document.get("carId"),document.get("carBrand"),document.get("carModel"),document.get("year"),document.get("color"),document.get("plateNumber"),document.get("rentedString"),document.get("rentedUser"),document.get("duration")};
         
         DefaultTableModel model = (DefaultTableModel)table.getModel();
         model.addRow(row);
@@ -65,7 +59,7 @@ public class RentACarPage extends javax.swing.JPanel {
     MongoCollection<Document> UserCollection = database.getCollection("Users");
         //SEARCHING FOR ONE DATA ONLY HEHE 
         Document documentForSearchingIndividualData = UserCollection.find(new Document("userId",userId)).first(); // PUT MUNA SA DOCUMENT YUNG DOCUMENT SA DATABASE NA HINAHANAP
-         String documentFoundUserName = documentForSearchingIndividualData.getString("name"); //ONCE NA NASA DOCUMENT MO NA DINECLARE YUNG DATA FROM DB, MAY ACCESS NA IKAW SA FIELDS NA MERON YUNG DOCUMENT!
+        String documentFoundUserName = documentForSearchingIndividualData.getString("name"); //ONCE NA NASA DOCUMENT MO NA DINECLARE YUNG DATA FROM DB, MAY ACCESS NA IKAW SA FIELDS NA MERON YUNG DOCUMENT!
  
           
         
@@ -87,8 +81,8 @@ public class RentACarPage extends javax.swing.JPanel {
      userId = durationField.getText();
      carId = carSearchIDField.getText();
      duration = durationField.getText();
-     
     MongoClient client = MongoClients.create("mongodb://localhost:27017");
+     
       
     MongoDatabase database = client.getDatabase("CRS");
     MongoCollection<Document> CarsCollection = database.getCollection("Cars");
@@ -115,7 +109,6 @@ public class RentACarPage extends javax.swing.JPanel {
         
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0); 
-
         for (Document document : findIterable) {
             Object[] row = {
                 document.get("carId"),
@@ -133,7 +126,6 @@ public class RentACarPage extends javax.swing.JPanel {
         }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -301,6 +293,9 @@ public class RentACarPage extends javax.swing.JPanel {
     private void removeUserToCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeUserToCarActionPerformed
         // TODO add your handling code here:
         removeRentalValues();
+        durationField.setText("");
+        carSearchIDField.setText("");
+        userIDField1.setText("");
         refreshTable();
     }//GEN-LAST:event_removeUserToCarActionPerformed
 
